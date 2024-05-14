@@ -23,7 +23,7 @@ type RecordZoneRelation struct {
 
 type Route53Client interface {
 	ListHostedZones(context.Context, *route53.ListHostedZonesInput, ...func(*route53.Options)) (*route53.ListHostedZonesOutput, error)
-	ListResourceRecordSets(context.Context, *route53.ListResourceRecordSetsInput,  ...func(*route53.Options)) (*route53.ListResourceRecordSetsOutput, error)
+	ListResourceRecordSets(context.Context, *route53.ListResourceRecordSetsInput, ...func(*route53.Options)) (*route53.ListResourceRecordSetsOutput, error)
 	ChangeResourceRecordSets(context.Context, *route53.ChangeResourceRecordSetsInput, ...func(*route53.Options)) (*route53.ChangeResourceRecordSetsOutput, error)
 }
 
