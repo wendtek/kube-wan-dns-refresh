@@ -31,6 +31,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: kube-wan-dns-refresh
+  namespace: default
 spec:
   schedule: "*/5 * * * *" # Every 5 minutes
   jobTemplate:
@@ -39,7 +40,7 @@ spec:
         spec:
           containers:
           - name: kube-wan-dns-refresh
-            image: ghcr.io:wendtek/kube-wan-dns-refresh:latest
+            image: ghcr.io/wendtek/kube-wan-dns-refresh:latest
             imagePullPolicy: IfNotPresent
             args:
             - --config /config/records.json
